@@ -50,10 +50,12 @@
       this.getForms()
     },
     methods: {
-      async getForms () {
-        const forms = await api.get('forms')
-
-        this.desserts = forms
+      getForms () {
+        api
+          .get('forms')
+          .then(({ data }) => {
+            this.desserts = data
+          })
       },
     },
   }
