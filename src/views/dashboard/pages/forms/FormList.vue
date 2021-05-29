@@ -52,7 +52,6 @@
     methods: {
       async getForms () {
         const forms = await api.get('forms')
-        console.log(forms)
 
         this.desserts = forms
       },
