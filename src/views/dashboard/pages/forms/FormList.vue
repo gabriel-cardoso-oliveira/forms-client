@@ -24,7 +24,34 @@
           prevIcon: 'mdi-minus',
           nextIcon: 'mdi-plus'
         }"
-      />
+      >
+        <template v-slot:[`item.actions`]="{ item }">
+          <v-btn
+            class="mx-2"
+            fab
+            dark
+            small
+            color="primary"
+            @click="editItem(item)"
+          >
+            <v-icon small>
+              mdi-pencil
+            </v-icon>
+          </v-btn>
+          <v-btn
+            class="mx-2"
+            fab
+            dark
+            small
+            color="primary"
+            @click="editItem(item)"
+          >
+            <v-icon small>
+              mdi-qrcode-scan
+            </v-icon>
+          </v-btn>
+        </template>
+      </v-data-table>
     </base-material-card>
   </v-container>
 </template>
@@ -42,6 +69,7 @@
             value: 'title',
           },
           { text: 'Descrição', value: 'description' },
+          { text: 'Ações', value: 'actions', sortable: false },
         ],
         desserts: [],
       }
@@ -56,6 +84,9 @@
           .then(({ data }) => {
             this.desserts = data
           })
+      },
+      editItem (item) {
+        console.log(item)
       },
     },
   }
