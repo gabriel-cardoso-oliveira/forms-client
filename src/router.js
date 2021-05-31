@@ -16,6 +16,11 @@ export default new Router({
           path: '',
           component: () => import('@/views/dashboard/pages/forms/FormList'),
         },
+        {
+          name: 'Avaliação',
+          path: '/form',
+          component: () => import('@/views/dashboard/pages/forms/Form'),
+        },
       ],
     },
   ],

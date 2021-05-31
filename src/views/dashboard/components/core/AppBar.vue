@@ -8,6 +8,7 @@
     height="75"
   >
     <v-btn
+      v-if="$route.path !== '/form'"
       class="mr-3"
       elevation="1"
       fab

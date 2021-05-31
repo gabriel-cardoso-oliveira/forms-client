@@ -44,7 +44,7 @@
             dark
             small
             color="primary"
-            @click="editItem(item)"
+            @click="generateQrcode(item)"
           >
             <v-icon small>
               mdi-qrcode-scan
@@ -87,6 +87,12 @@
       },
       editItem (item) {
         console.log(item)
+      },
+      generateQrcode (item) {
+        this.$router.push({
+          name: 'Avaliação',
+          params: item,
+        })
       },
     },
   }
